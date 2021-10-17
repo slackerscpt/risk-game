@@ -1,4 +1,8 @@
 import numpy as np
+from die import Die
+from players import Players
+
+
 debug = False
 
 def random_number():
