@@ -15,6 +15,9 @@ class Players():
     def lost_unit(self):
         self.units -= 1
 
+    def won_unit(self):
+        self.units += 1
+
     def allowed_loses(self, loses):
         self.loses = loses
     

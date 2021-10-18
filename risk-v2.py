@@ -31,17 +31,19 @@ def match_round(attacker, defender):
         defender_dice.sort(reverse=True)
 
         
-        while (attacker_dice and defender_dice):
+        while (attacker_dice and defender_dice and attacker.loses > attacker_loses):
             if debug: print ('Attacker Dice: {}'.format(attacker_dice))
             if debug: print ('Defender Dice: {}'.format(defender_dice))
             outcome = compare(attacker_dice[0], defender_dice[0])
             if outcome:
                 if debug: print ('attacker wins')
                 defender.lost_unit()
+                attacker.won_unit()
                 
             else:
                 if debug: print ('defender wins')
                 attacker.lost_unit()
+                defender.won_unit()
                 attacker_loses += 1
 
             attacker_dice.pop(0)
@@ -59,7 +61,10 @@ def ask_user():
     defender = Players("defender", defender_units)
     return attacker, defender
 
-#attack_units, defender_units, acceptable_loses = ask_user()
-attacker, defender = ask_user()
-#match_round(attack_units, defender_units, acceptable_loses)
-match_round(attacker, defender)
+
+def main():
+    attacker, defender = ask_user()
+    match_round(attacker, defender)
+
+if __name__ == "__main__":
+    main()
