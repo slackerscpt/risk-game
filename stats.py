@@ -15,8 +15,9 @@ for numbers in die_stats:
 print (counter)
 print (overall)
 
-for keys in counter:
-    print ('The die came out with {} total times: {}'.format(keys,counter[keys]))
-    print ('Percent showing up {}'.format((counter[keys]/overall)* 100))
+for keys in sorted(counter):
+    #print ('The die came out with {} total times: {}'.format(keys,counter[keys]))
+    #print ('Percent showing up {:.2f}'.format((counter[keys]/overall)* 100))
+    print ('Number: {:02d}, total: {}, percent: {:.2f}'.format(keys, counter[keys], (counter[keys]/overall)*100))
 
 
