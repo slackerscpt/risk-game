@@ -6,7 +6,7 @@ from players import Players
 debug = True
 
 def random_number():
-    return np.random.randint(1,6)
+    return np.random.randint(1,7)
 
 def setup_dice(player):
     dice = []
